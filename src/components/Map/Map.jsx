@@ -19,11 +19,11 @@ const Map = ({setCoordinates, setBounds, coordinates, places, setChildClicked}) 
         defaultZoom={14}
         margin={[50, 50, 50, 50]}
         options={''}
+        onChildClick={(child) => setChildClicked(child)}
         onChange={(e) => {
           setCoordinates({lat: e.center.lat, lng: e.center.lng});
           setBounds({ne: e.marginBounds.ne, sw: e.marginBounds.sw});
         }}
-        onChildClick={(child) => setChildClicked(child)}
       >
         {places?.map((place, i) => (
           <div 
